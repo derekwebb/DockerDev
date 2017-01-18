@@ -1,4 +1,4 @@
-# Drupal with PostgreSQL
+# Drupal with MySQL
 #
 # Access via "http://localhost:8080" (or "http://$(docker-machine ip):8080" if using docker-machine)
 #
@@ -18,8 +18,9 @@ services:
     ports:
       - 8080:80
     volumes:
-      - /c/Users/dwebb/Workspace/Projects/ustravel7/docroot/sites/all/:/usr/share/ustravel7
+        - "./test.txt:/tmp"
     restart: always
+    env_file: ./.env
 
   mysql:
     image: mysql:5.7
